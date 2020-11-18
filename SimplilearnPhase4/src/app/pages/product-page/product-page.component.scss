@@ -1,0 +1,37 @@
+.centered-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.product-container {
+    border: 3px;
+    border-radius: 8px;
+}
+.product-listing {
+    padding-right: 20px;
+    width: 200px;
+    float: left;
+}
+.name {
+    display: inline-block;
+    margin-bottom: 15px;
+    padding: 15px;
+    font-family: "Lato";
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+img{
+    display: inline-block;
+    width:50;
+    height: 25px;
+}
+.center-box {
+    padding: 35px;
+    width: 50%;
+    height: 50%;
+    background: white;
+    border-radius: 5px;
+}

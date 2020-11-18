@@ -1,0 +1,25 @@
+<div class="centered-content">
+    <div class="shopping-box">
+        <p class="title has-text-primary">Amazone Cart</p>
+
+        <div class="checkout-item" *ngFor="let product of shopping_cart">
+                <img src={{product[1]}} alt="product image"> 
+                <p class="desc">
+                    {{product[0]}}
+                </p>
+                <p>
+                    Cost: {{product[2]}}
+                </p>
+        </div>
+
+        <div id="checkout" class="field is-pulled-right" >
+            <div class="control">
+              <button class="button is-success has-text-white" routerLink="/">Go Back</button>
+              <button class="button is-success has-text-white" (click)="clearCart()">Buy</button>
+              <button class="button is-success has-text-white" (click)="clearCart()">Clear Cart</button>
+              <p *ngIf="totalCost">Total Cost: {{totalCost}}</p>
+              <p *ngIf="!totalCost">Total Cost: 0</p>
+            </div>
+          </div>
+    </div>
+</div>

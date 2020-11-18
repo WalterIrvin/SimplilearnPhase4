@@ -1,0 +1,10 @@
+<div class="centered-content">
+    <div class="center-box">
+        <img *ngIf="productImg" src={{productImg}} alt="logo">
+        <p *ngIf="productName">{{productName}}</p>
+        <p *ngIf="productPrice">Starting at: {{productPrice}}</p>
+        <p *ngIf="productBody">{{productBody}}</p>
+        <button class="button is-success has-text-white" routerLink="/">Go Back</button>
+        <button class="button is-success has-text-white" routerLink="/checkout">Buy</button>
+    </div>
+</div>

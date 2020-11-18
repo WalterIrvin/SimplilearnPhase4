@@ -1,0 +1,34 @@
+<div class="centered-content">
+    <div class="task-manager-container">
+        <div class="sidebar">
+            <h1 class="title has-text-primary">
+                Welcome to Amazone
+            </h1>
+            <div class="list-menu">
+                <p class ="filler">We contain many various products from companies that may interest you.</p>
+            </div>
+            <div *ngIf="!logged_in">
+                <button class="button is-primary has-text-white" style="margin: 10px;" routerLink="/login">Login</button>
+            </div>
+            <div *ngIf="logged_in">
+                <button class="button is-primary has-text-white" style="margin: 10px;" routerLink="/">logout</button>
+            </div>
+            <button class="button is-primary has-text-white" style="margin: 10px;"routerLink="/register">New Member</button>
+            <button class="button is-primary has-text-white" style="margin: 10px;"routerLink="/checkout">Cart/Checkout</button>
+        </div>
+        <div class="task-list-container">
+            <h1 class="title has-text-primary">
+                Companies
+            </h1>
+
+            <!-- Company elements-->
+            <a *ngFor="let company of our_companies" [routerLink]="['/companies', company._id]" (click)="onCompanyClicked(company.title, company.image, company.body)">
+                <div class="task">
+                        <p class="title">{{company.title}}</p>
+                        <img src={{company.image}}>
+                        <p class="company-desc">{{company.body}}</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
