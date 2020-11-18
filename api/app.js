@@ -295,15 +295,7 @@ app.get('/companies/:id', (req, res) => {
     });
 });
 
-//Getting back the details of one company based on url id
-app.get('/companies/find', (req, res) => {
-    let incomingUrl = req.headers.referer;
-    let company = incomingUrl.split('/companies/')[1];
-    console.log('TESTING');
-    console.log(company);
-});
-
-app.post('/companies', (req, res) => {
+app.post('/companies', elevatedVerify, (req, res) => {
     let title = req.body.title;
     let image = req.body.image;
     let body = req.body.body;
@@ -320,7 +312,7 @@ app.post('/companies', (req, res) => {
     });
 });
 
-app.patch('/companies/:id', (req, res) => {
+app.patch('/companies/:id', elevatedVerify, (req, res) => {
     Company.findOneAndUpdate({ _id: req.params.id}, {
         $set: req.body
     }).then(()=>{
@@ -328,7 +320,7 @@ app.patch('/companies/:id', (req, res) => {
     });
 });
 
-app.delete('/companies/:id', (req, res) => {
+app.delete('/companies/:id', elevatedVerify, (req, res) => {
     Company.findOneAndRemove({
         _id: req.params.id
     }).then((removedProdDoc) => {
